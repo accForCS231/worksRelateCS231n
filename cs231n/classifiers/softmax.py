@@ -26,11 +26,12 @@ def softmax_loss_naive(W, X, y, reg):
 	Returns a tuple of:
 	- loss as single float
 	- gradient with respect to weights W; an array of same shape as W
-	"""
+	
 	# Initialize the loss and gradient to zero.
+	"""
 	loss = 0.0
 	dW = np.zeros_like(W)
-	'''
+	"""
 	# minibatch size is N, the feature vector is row vector with size 1*D
 	# the label vector per minibatch is a column vector with size N*1
 	# Thus the setting of some hyperparameters:
@@ -51,14 +52,13 @@ def softmax_loss_naive(W, X, y, reg):
 		probs = normalize(score, norm='l1')
 
 		# Loss:
-		'''
 		# After dot producting X with W, we get a matrice with shape (N, C) for every example in the minibatch, 
 		# we get a vector, whose value represents the scores for every class this example can be graded and 
 		# thus classified
 		# One particular caveat to attention is that during training process, we believe that we only train
 		# W with C-1 classes rather than C classes out of the preoccupation that the final score being derived
 		# from 1-sum(other scores)
-		'''
+		
 		# data_loss = np.zeros(MINIBAT_SIZE)
 		data_loss = ( -np.log(probs[range(MINIBAT_SIZE),y]) ).mean()
 		# data_loss = data_loss.mean()
@@ -72,7 +72,7 @@ def softmax_loss_naive(W, X, y, reg):
 
 		# gradient update
 		W += learning_rate * dW
-	'''
+	"""
 
 
 		#############################################################################
@@ -81,7 +81,7 @@ def softmax_loss_naive(W, X, y, reg):
 		# here, it is easy to run into numeric instability. Don't forget the        #
 		# regularization!                                                           #
 		#############################################################################
-		pass
+	pass
 		#############################################################################
 		#                          END OF YOUR CODE                                 #
 		#############################################################################
